@@ -1,0 +1,13 @@
+name: Active Render
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sending request to Render
+        run: curl -s -I https://list-your-favor.onrender.com/
