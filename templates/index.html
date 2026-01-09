@@ -21,15 +21,16 @@
       </nav>  
     </header>  
     <main>
+      <div class="image_dark"></div>
       <form action="/" method="POST" class="Main_form">
         <div class="Main_form_div">
           <div class="Title_div">
             <label for="title_input">
-            <h2 class="To_Do_ask"><big>To-Do-Activity</big></h2>
+            <h2 class="To_Do_ask">To-Do-Activity</h2>
             </label>
             <input type="text" class="input" name="title" placeholder="Learn Programing upto 125 letters" id="title_input">
             <br>
-            <h3 class="Gurantee"> We assure that We'll never share your Tasks/Acttivites with others:</h3>
+            <h3 class="Gurantee"><span class="icons">ⓘ</span> We assure that We'll never share your Tasks/Activites with others:</h3>
           </div>
           <hr>
           <br>
@@ -39,18 +40,22 @@
             </label>
             <input type="text" class="input" name="description" placeholder="Learn with joy! upto 250 letters" id="description_input" autocomplete="off">
           </div>
-          <div class="Checking-Submiting_div">
+          <div class="Functionality_area">
+            <span>
             <label for="to_do_checker" id="to_do_checker-label">Checked</label>
             <input type="checkbox" name="to_do_checker" id="to_do_checker">
+            </span>
             <br>
             <button type="submit" name="to_do_submiter" id="to_do_submiter">Submit Activities</button>
+            <hr>
+            <br>
+            <a href="/delete_all"><button type="button" id="to_do_delete_all">Delete all</button></a>
+              <a href="/logout"><button type="button" class="Confirm_auth" style="background-color:rgba(00,00,00,1) ;">Log_Out</button></a>
           </div>
-          <a href="/logout"><button type="button" class="Confirm_auth" style="background-color:rgba(00,00,00,1) ;">Log_Out</button></a>
         </div> 
       </form>
-      <hr>
-      <br>
-      <button type="button" id="to_do_delete_all"><a href="/delete_all">Delete all</a></button>
+    </main>
+    <footer>
       {% if total_task | length == 0%}
         <div class="Zero-div">
           <h3>No Actvities to Show!Type your first Activity above:</h3>
@@ -83,5 +88,5 @@
       </table>
       </div>
       {% endif %}
-    </main>
+    </footer>
   {% endblock  %}       

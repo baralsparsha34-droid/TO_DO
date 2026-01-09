@@ -8,9 +8,59 @@
 </head>
 <body>
   <style>
-    .Data_div{
-      display: table;
-    }
+   .Data_div2{
+    height: 100%;
+    width: 99vw;
+    padding: 10% 0px 0px 0px;
+    background-color: rgb(20, 80, 170);
+    display: block;
+}
+.data_table{
+    table-layout: fixed;
+    width: 100%;
+    height: auto;
+    display: table;
+    background-color: var(--clean);
+    overflow: hidden;
+}
+.data_table:hover{
+    border-color: var(--danger);
+}
+.header_row{
+    height: 100%;
+}
+th{
+    font-size: 2em;
+    font-weight:bolder;
+    text-decoration: underline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.long{
+    width: 33%;
+}
+.id_header{
+    width: 5%;
+}
+.row_item{
+    font-size: 1.5em;
+    font-weight:bold;
+    border-collapse:collapse;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+.data_row{
+    width: auto;
+    height: 20%;
+}
+.table_options{
+    font-size: 2em;
+    margin-left:10%;
+    border-radius: 25%;
+}
+
   </style>
     <h1>Welcome To  Web:</h1>
     <left>
@@ -21,7 +71,7 @@
         </div>
     {% else %}
       <button type="button" id="to_do_delete_all"><a href="/delete_all">Delete all</a></button>
-      <div class="Data_div">
+      <div class="Data_div2">
         <table class="data_table" border="20">
         <caption><h2>To_Do_List || Here:</h2></caption>
         <thead>
@@ -36,8 +86,8 @@
           {% for data2 in total_task2 %}
           <tr class="data_row">
             <th scope="row">{{loop.index}}</th>
-            <td class="row_item">{{ data2.activity }}</td>
-           <td class="row_item">{{ data2.description }}</td>
+            <td class="scroll">{{ data2.activity }}</td>
+           <td class="scroll">{{ data2.description }}</td>
            <td class="row_item">
             <a href="/Delete/{{data2.sn}}"><button class="table_options">X</button></a><a href="/Update/{{data2.sn}}"><button class="table_options">+</button></a></td>
           </tr>

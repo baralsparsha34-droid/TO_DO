@@ -8,14 +8,59 @@
 </head>
 <body>
   <style>
-    table{
-      width: 100%;
-      height: auto;
-    }
-    .long{
-      width: 40%;
-      white-space: wrap;
-    }
+    .Data_div2{
+    height: 100%;
+    width: 99vw;
+    padding: 10% 0px 0px 0px;
+    background-color: rgb(20, 80, 170);
+    display: block;
+
+}
+.data_table{
+    table-layout: fixed;
+    width: 100%;
+    height: auto;
+    display: table;
+    background-color: var(--clean);
+    overflow: hidden;
+}
+.data_table:hover{
+    border-color: var(--danger);
+}
+.header_row{
+    height: 100%;
+}
+th{
+    font-size: 2em;
+    font-weight:bolder;
+    text-decoration: underline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.long{
+    width: 33%;
+}
+.id_header{
+    width: 5%;
+}
+.row_item{
+    font-size: 1.5em;
+    font-weight:bold;
+    border-collapse:collapse;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+.data_row{
+    width: auto;
+    height: 20%;
+}
+.table_options{
+    font-size: 2em;
+    margin-left:10%;
+    border-radius: 25%;
+}
   </style>
     <left>
         <h2>These Are Your Completed_Activities:</h2>
@@ -24,7 +69,7 @@
           <h3>No Actvities to Show!Type your first Activity above:</h3>
         </div>
     {% else %}
-      <div class="Data_div">
+      <div class="Data_div2">
         <table class="data_table" border="20">
         <caption><h2>To_Do_List || Here:</h2></caption>
         <thead>
@@ -39,8 +84,8 @@
           {% for data3 in total_task3 %}
           <tr class="data_row">
             <th scope="row">{{loop.index}}</th>
-            <td class="row_item">{{ data3.activity }}</td>
-           <td class="row_item">{{ data3.description }}</td>
+            <td class="scroll">{{ data3.activity }}</td>
+           <td class="scroll">{{ data3.description }}</td>
            <td class="row_item">{{ data3.created_time }}</td>
           </tr>
           {% endfor %}
