@@ -60,6 +60,7 @@ body{
     border: var(--bord) solid rgba(20,170,150,1);
     height: auto;
     padding:2% 0px 3% 0px;
+    position: sticky;
 }
 .Board{
     height: 100%;
